@@ -1,0 +1,14 @@
+apiVersion: "authentication.istio.io/v1alpha1"
+kind: "Policy"
+metadata:
+  name: "customerjwt"
+spec:
+  targets:
+  - name: customer
+  origins:
+  - jwt:
+      issuer: "http://keycloak-tutorial.192.168.64.14.nip.io/auth/realms/istio"
+      jwksUri: "http://keycloak-tutorial.192.168.64.14.nip.io/auth/realms/istio/protocol/openid-connect/certs"
+      audiences:
+      - customer-tutorial  
+  principalBinding: USE_ORIGIN

@@ -1,0 +1,1 @@
+kubectl scale --replicas=2 deployment/recommendation-v2 -n demo
