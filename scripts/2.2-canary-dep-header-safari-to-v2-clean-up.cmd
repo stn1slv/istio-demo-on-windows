@@ -1,0 +1,1 @@
+istioctl delete -f ../istiofiles/virtual-service-safari-recommendation-v2.yml -n demo
