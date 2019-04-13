@@ -1,0 +1,1 @@
+istioctl delete -f ../istiofiles/virtual-service-recommendation-timeout.yml -n demo

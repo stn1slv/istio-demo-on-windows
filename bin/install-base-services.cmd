@@ -2,6 +2,7 @@ mvn clean package -DskipTests -f ../src/customer/java/springboot/pom.xml
 mvn clean package -DskipTests -f ../src/preference/java/springboot/pom.xml
 mvn clean package -DskipTests -f ../src/recommendation/java/vertx-v1/pom.xml
 mvn clean package -DskipTests -f ../src/recommendation/java/vertx-v2/pom.xml
+mvn clean package -DskipTests -f ../src/recommendation/java/vertx-v2-timeout/pom.xml
 
 docker build -t example/customer ../src/customer/java/springboot
 docker build -t example/preference:v1 ../src/preference/java/springboot
