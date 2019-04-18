@@ -16,7 +16,7 @@ spec:
       loadBalancer:
         simple: RANDOM
       outlierDetection:
-        baseEjectionTime: 15.000s
+        baseEjectionTime: 20.000s
         consecutiveErrors: 1
         interval: 5.000s
         maxEjectionPercent: 100
@@ -30,7 +30,7 @@ spec:
       loadBalancer:
         simple: RANDOM
       outlierDetection:
-        baseEjectionTime: 15.000s
+        baseEjectionTime: 20.000s
         consecutiveErrors: 1
         interval: 5.000s
         maxEjectionPercent: 100
