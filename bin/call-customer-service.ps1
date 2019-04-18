@@ -4,13 +4,18 @@ $availableColors = @('Red','DarkRed','DarkMagenta','Magenta','Yellow','DarkYello
 $currentColor = 0
 while ($true) {
     $responseTime = Measure-Command -Expression {
-        $response = Invoke-WebRequest -Uri $Url
+       try {
+            $response = Invoke-WebRequest -Uri $Url
+            $responseText = $response.Content
+       } catch {
+            $responseText = $_
+       } 
     }
     $milliseconds = [Math]::Round($responseTime.TotalMilliseconds, 0)
-    if ($response.Content -Match 'v1') { 
-        Write-Host [$milliseconds 'ms'] "`t" $response.Content -ForegroundColor Green -NoNewline 
-    }  ElseIf ($response.Content -Match 'v2') { 
-         $podID=$response.Content.split("'")[1]
+    if ($responseText -Match 'v1') { 
+        Write-Host [$milliseconds 'ms'] "`t" $responseText -ForegroundColor Green -NoNewline 
+    }  ElseIf ($responseText -Match 'v2') { 
+         $podID=$responseText.split("'")[1]
          if ($colorsForPods.ContainsKey($podID)){
             $color=$colorsForPods[$podID]
          } Else {
@@ -18,9 +23,9 @@ while ($true) {
             $currentColor+=1
             $colorsForPods.Add($podID,$color)
          }
-         Write-Host [$milliseconds 'ms'] "`t" $response.Content -ForegroundColor $color -BackgroundColor Gray -NoNewline 
+         Write-Host [$milliseconds 'ms'] "`t" $responseText -ForegroundColor $color -BackgroundColor Gray -NoNewline 
     } else {
-         Write-Host [$milliseconds 'ms'] "`t" $response.Content -ForegroundColor Black -NoNewline 
+         Write-Host [$milliseconds 'ms'] "`t" $responseText -ForegroundColor White
     } 
     Start-Sleep -Seconds 1
 }
