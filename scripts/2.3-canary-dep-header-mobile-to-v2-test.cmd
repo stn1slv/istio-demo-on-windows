@@ -1,0 +1,1 @@
+curl -A "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4(KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5"  http://127.0.0.1:8001/api/v1/namespaces/demo/services/customer:8080/proxy/
