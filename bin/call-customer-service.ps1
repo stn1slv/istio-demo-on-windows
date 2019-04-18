@@ -1,6 +1,6 @@
 ﻿$Url = "http://127.0.0.1:8001/api/v1/namespaces/demo/services/customer:8080/proxy/"
 $colorsForPods = @{}
-$availableColors = @('Red','DarkRed','DarkMagenta','Magenta','Yellow','DarkYellow','DarkCyan','Cyan','Gray','White','DarkGray')
+$availableColors = @('Red','DarkMagenta','DarkRed','Magenta','Yellow','DarkYellow','DarkCyan','Cyan','Gray','White','DarkGray')
 $currentColor = 0
 while ($true) {
     $responseTime = Measure-Command -Expression {
