@@ -10,7 +10,7 @@ kubectl proxy
 cd bin
 call-customer-service.cmd
 ```
-3. Open separate console and use demo scripts in the script directory:
+3. Open separate console and use demo scripts in the [script directory](https://github.com/stn1slv/istio-demo-on-windows/tree/master/scripts):
 ```bash
 cd scripts
 ```
